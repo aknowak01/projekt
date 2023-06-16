@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="container__box">
+    <div class="container__form">
+      <p>Dodaj kategorię</p>
+      <form [formGroup]="categoryForm" (ngSubmit)="submitCategory()">
+        <div class="container__form-field">
+          <label for="categoryName">Podaj nazwę kategorii</label>
+          <input
+            type="text"
+            id="categoryName"
+            name="categoryName"
+            formControlName="name"
+            class="container__form-field--input-style"
+          />
+        </div>
+        <div class="container__form-buttons">
+          <button class="container__form-buttons--style">
+            Dodaj nową kategorię
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="container__form">
+      <p>Dodaj nowe pytanie</p>
+      <form [formGroup]="questionForm" (ngSubmit)="submitQuestion()">
+        <div class="container__form-field">
+          <label for="categoryId">Wybierz kategorię do której chcesz dodać pytanie</label>
+          <select
+            formControlName="category_id"
+            class="container__form-field--input-style"
+            required
+          >
+            <option value="" disabled selected hidden>
+            </option>
+            <option
+              *ngFor="let category of categories"
+              value="{{ category.id }}"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <div class="container__form-field">
+          <label for="text">Podaj pytanie</label>
+          <input
+            class="container__form-field--input-style"
+            type="text"
+            id="text"
+            name="text"
+            formControlName="text"
+          />
+        </div>
+        <div class="container__form-field">
+          <label for="answers">Wpisz odpowiedzi</label>
+          <ng-container
+            *ngFor="let control of answers.controls; let i = index"
+            formArrayName="answers"
+          >
+            <div class="container__form-array">
+              <input
+                class="container__form-field--input-style"
+                type="text"
+                id="answer"
+                name="answer"
+                [formControlName]="i"
+              />
+              <button
+                type="button"
+                (click)="removeInput(i)"
+                class="container__form-array--button"
+              >
+                Usuń odpowiedź
+              </button>
+            </div>
+          </ng-container>
+          <button
+            type="button"
+            class="container__form-buttons--style"
+            (click)="addInput()"
+          >
+            Ddodaj kolejną odpowiedź
+          </button>
+        </div>
+        <div class="container__form-field">
+          <label for="goodAnswer">Wpisz prawidłową odpowiedź</label>
+          <input
+            class="container__form-field--input-style"
+            type="text"
+            id="goodAnswer"
+            name="goodAnswer"
+            formControlName="goodAnswer"
+          />
+        </div>
+        <div class="container__form-buttons">
+          <button type="submit" class="container__form-buttons--style">
+            Dodaj pytanie
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

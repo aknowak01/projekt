@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="container__box">
+    <div class="container__form">
+      <p>Tryb edycji pytania</p>
+      <form [formGroup]="questionForm" (ngSubmit)="submitQuestion()">
+        <div class="container__form-field">
+          <label for="categoryId">Zmień kategorie</label>
+          <select
+            formControlName="category_id"
+            class="container__form-field--input-style"
+            required
+          >
+            <option value="" disabled selected hidden>
+              Wybierz kategorię pytania
+            </option>
+            <option
+              *ngFor="let category of categories"
+              value="{{ category.id }}"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <div class="container__form-field">
+          <label for="text">Wpisz zaaktualizowane pytanie</label>
+          <input
+            class="container__form-field--input-style"
+            type="text"
+            id="text"
+            name="text"
+            formControlName="text"
+          />
+        </div>
+        <div class="container__form-field">
+          <label for="answers">Zmień odpowiedzi</label>
+          <ng-container
+            *ngFor="let control of answers.controls; let i = index"
+            formArrayName="answers"
+          >
+            <div class="container__form-array">
+              <input
+                class="container__form-field--input-style"
+                type="text"
+                id="answer"
+                name="answer"
+                [formControlName]="i"
+              />
+              <button
+                type="button"
+                (click)="removeInput(i)"
+                class="container__form-array--button"
+              >
+                Usuń odpowiedź
+              </button>
+            </div>
+          </ng-container>
+          <button
+            type="button"
+            class="container__form-buttons--style"
+            (click)="addInput()"
+          >
+            Dodaj kolejną odpowiedź
+          </button>
+        </div>
+        <div class="container__form-field">
+          <label for="goodAnswer">Wpisz prawidłową odpowiedź</label>
+          <input
+            class="container__form-field--input-style"
+            type="text"
+            id="goodAnswer"
+            name="goodAnswer"
+            formControlName="goodAnswer"
+          />
+        </div>
+        <div class="container__form-buttons">
+          <button type="submit" class="container__form-buttons--style">
+            Zapisz zmiany
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

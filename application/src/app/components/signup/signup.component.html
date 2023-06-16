@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container__form">
+    <p>Formularz rejestracji</p>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div class="container__form-field">
+        <label for="login">Wpisz swój login</label>
+        <input
+          type="text"
+          id="login"
+          name="login"
+          formControlName="name"
+          class="container__form-field--input-style"
+        />
+      </div>
+      <div class="container__form-field">
+        <label for="email">Wpisz swój email</label>
+        <input
+          class="container__form-field--input-style"
+          type="email"
+          id="email"
+          name="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="container__form-field">
+        <label for="password">Wpisz swoje hasło</label>
+        <input
+          class="container__form-field--input-style"
+          type="password"
+          id="password"
+          name="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="container__form-buttons">
+        <button class="container__form-buttons--style">Zarejestruj się</button>
+      </div>
+    </form>
+  </div>
+</div>

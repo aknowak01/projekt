@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="container__box">
+    <p>Brawo udało ci się osignąć tyle punktów</p>
+    {{ points }}
+    <p>{{ points | title }}</p>
+    <button class="container__box--button" (click)="backToHome()">
+      Wróć na strone główną!
+    </button>
+  </div>
+</div>

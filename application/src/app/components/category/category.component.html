@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="container__site"></div>
+  <h1>Wybierz Kategorie</h1>
+  <div class="container__categories">
+    <div
+      class="container__categories__category"
+      *ngFor="let category of categories"
+    >
+      <a
+        class="container__categories__category--text"
+        href="#"
+        [routerLink]="['/questions', category.id]"
+      >Kategoria <strong>{{ category.name }}</strong></a
+      >
+    </div>
+  </div>
+</div>

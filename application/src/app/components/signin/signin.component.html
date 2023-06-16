@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="container__form">
+    <p>Formularz logowania</p>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="container__form-field">
+        <label for="login">Wpisz swój login</label>
+        <input
+          type="text"
+          id="login"
+          name="login"
+          formControlName="login"
+          class="container__form-field--input-style"
+        />
+      </div>
+      <div class="container__form-field">
+        <label for="password">Wpisz swoje hasło</label>
+        <input
+          class="container__form-field--input-style"
+          type="password"
+          id="password"
+          name="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="container__form-buttons">
+        <button class="container__form-buttons--style">Zaloguj się</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar__position">
+    <div class="navbar__button">
+      <a href="#" [routerLink]="['']">Strona główna</a>
+    </div>
+    <div class="navbar__button">
+      <a href="#" [routerLink]="['categories']">Kategorie</a>
+    </div>
+    <div class="navbar__button" *ngIf="authService.isLoggedIn()">
+      <a href="#" [routerLink]="['addData']">Dodaj quizy</a>
+    </div>
+    <div class="navbar__button" *ngIf="authService.isLoggedIn()">
+      <a href="#" [routerLink]="['modify']">Modyfikuj quizy</a>
+    </div>
+    <div class="navbar__button" *ngIf="!authService.isLoggedIn()">
+      <a href="#" [routerLink]="['signup']">Zarejestruj</a>
+    </div>
+    <div class="navbar__button" *ngIf="!authService.isLoggedIn()">
+      <a href="#" [routerLink]="['signin']">Zaloguj</a>
+    </div>
+    <div class="navbar__button" *ngIf="authService.isLoggedIn()">
+      <a (click)="signOut()">Wyloguj</a>
+    </div>
+  </div>
+</nav>

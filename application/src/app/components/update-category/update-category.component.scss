@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    background-color: white;
+    border-radius: 5px;
+    min-height: 200px;
+  }
+
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+
+    &--input-style {
+      border-radius: 5px;
+      border: 1px solid black;
+      padding: 5px;
+      padding-left: 10px;
+    }
+  }
+
+  &__form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+
+    &--style {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 20px;
+      width: 150px;
+      height: 25px;
+    }
+
+    &--style:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__form-array {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 10px;
+      width: 80px;
+      height: 25px;
+    }
+  }
+}

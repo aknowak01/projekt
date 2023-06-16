@@ -1,0 +1,39 @@
+.container {
+  font-family: sans-serif;
+
+  &__button {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      background: rgba(29, 137, 253, 1);
+      color: white;
+      width: 250px;
+      height: 80px;
+      font-size: 30px;
+      transform: scale(1);
+      transition: all 0.3s ease-out;
+      padding: 5px;
+      cursor: pointer;
+
+      &--a {
+        text-align: center;
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    &__btn:hover {
+      transform: scale(1.1);
+      background: #C700FFFF;
+      color: white;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.container {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 5px;
+  min-width: 150vh;
+  min-height: 30vh;
+  color: black;
+
+  &__question {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__answers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 55vh;
+    min-width: 150vh;
+
+    &--checked-answer {
+      background-color: rgb(157, 245, 193);
+    }
+  }
+
+  .column {
+
+    height: 45vh;
+    min-width: 65vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__answer {
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-width: 50%;
+  }
+}

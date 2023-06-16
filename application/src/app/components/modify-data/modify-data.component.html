@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="container__box">
+    <p>Kategorie które możesz zmodyfikować</p>
+    <div class="container__field" *ngFor="let category of categoryList">
+      <div class="container__field--wrapper">
+        <div class="container__field--title">
+          {{ category.name }}
+        </div>
+        <div class="container__field--buttons">
+          <button
+            class="container__field--modifyBtn"
+            (click)="onModify('category', category.id)"
+          >
+            Zmodyfikuj Kategorię
+          </button>
+          <button
+            class="container__field--deleteBtn"
+            (click)="onDelete('category', category.id)"
+          >
+            Usuń Kategorie
+          </button>
+        </div>
+      </div>
+    </div>
+    <p class="paragraph__element">Pytania które możesz zmodyfikować</p>
+    <select [(ngModel)]="categoryOfQuestion" (ngModelChange)="onChange($event)">
+      <option *ngFor="let category of categoryList" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+    <div class="container__field" *ngFor="let question of questionsList">
+      <div class="container__field--wrapper">
+        <div class="container__field--title">
+          {{ question.text }}
+        </div>
+        <div class="container__field--buttons">
+          <button
+            class="container__field--modifyBtn"
+            (click)="onModify('question', question.id)"
+          >
+            Zmodyfikuj Pytanie
+          </button>
+          <button
+            class="container__field--deleteBtn"
+            (click)="onDelete('question', question.id)"
+          >
+            Usuń Pytanie
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+}
+
+.head--container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.container {
+  position: relative;
+  min-height: 100%;
+}
+
+.content-wrapper {
+  padding-bottom: 2.5rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+
+  &--width-height {
+    width: 45%;
+    height: 70%;
+  }
+}

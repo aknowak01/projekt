@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="container__box">
+    <div class="container__form">
+      <p>Tryb edycji kategorii</p>
+      <form [formGroup]="categoryForm" (ngSubmit)="submitCategory()">
+        <div class="container__form-field">
+          <label for="categoryName">Wpisz nową nazwę kategorii</label>
+          <input
+            type="text"
+            id="categoryName"
+            name="categoryName"
+            formControlName="name"
+            class="container__form-field--input-style"
+          />
+        </div>
+        <div class="container__form-buttons">
+          <button class="container__form-buttons--style">
+            Zapisz zmiany
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

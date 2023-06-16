@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container__question">
+    {{ questionData.text }}
+  </div>
+  <div class="container__answers">
+    <div class="column">
+      <div
+        appHighlightElement
+        class="container__answer"
+        *ngFor="let answer of questionData.answers.slice(0, questionData.answers.length / 2); let i = index"
+        [ngClass]="{
+          'container__answers--checked-answer': i === checkedAnswer
+        }"
+        (click)="checkAnswer(answer, i)"
+      >
+        {{ answer }}
+      </div>
+    </div>
+    <div class="column">
+      <div
+        appHighlightElement
+        class="container__answer"
+        *ngFor="let answer of questionData.answers.slice(questionData.answers.length / 2); let i = index"
+        [ngClass]="{
+          'container__answers--checked-answer': i + questionData.answers.length / 2 === checkedAnswer
+        }"
+        (click)="checkAnswer(answer, i + questionData.answers.length / 2)"
+      >
+        {{ answer }}
+      </div>
+    </div>
+  </div>
+</div>

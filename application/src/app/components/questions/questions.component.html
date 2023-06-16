@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="container__questions">
+    <app-question
+      [questionData]="currentQuestion"
+      [index]="currentQuestionIndex"
+      (userResponse)="saveUserResponse($event)"
+    ></app-question>
+  </div>
+  <div class="container__buttons">
+    <button *ngIf="currentQuestionIndex < questions.length - 1; else finishGameButton"
+            class="container__buttons--style"
+            (click)="nextQuestion()">
+      Następny element
+    </button>
+
+    <ng-template #finishGameButton>
+      <button class="container__buttons--style"
+              (click)="finishGame()">
+        Zakończ grę
+      </button>
+    </ng-template>
+  </div>
+</div>
